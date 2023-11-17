@@ -33,20 +33,27 @@ services:
 ## Se debe ingresar al bash de Apache, instalar la extensión mysqli con el comando
 ## docker exec -it sigma_sitio_1 bash
 ## docker-php-ext-install mysqli
+
 ## Luego copiar la ruta similar a esta:  /usr/local/lib/php/extensions/no-debug-non-zts-20210902/
 ## Ya que en esta carpeta se encuentra ubicado el archivo mysqli.so
 ## actualizar e instalar nano con: 
 ## apt-get update && apt-get install nano
-## Luego, en la ruta: cd /usr/local/etc/php 
+
+## Luego, en la ruta: 
+# cd /usr/local/etc/php 
+
 ## editar los archivos:
 ## En el área Dynamic Extensions pegar la ruta descomentada asignanda a la variable    extension=   y agregar el archivo   mysqli.so 
 ## nano php.ini-development
 ## extension=/usr/local/lib/php/extensions/no-debug-non-zts-20210902/mysqli.so
+
 ## nano php.ini-production
 ## extension=/usr/local/lib/php/extensions/no-debug-non-zts-20210902/mysqli.so
+
 ## salir del editor y del bash
-## Reiniciar el servicio: 
-## docker restart sigma_sitio_1 (Corresponde al nombre del servicio php)
+## Reiniciar el servicio: (Corresponde al nombre del servicio php)
+## docker restart sigma_sitio_1 
+
 
 
 ## Parar el servicio: 

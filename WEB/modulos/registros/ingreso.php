@@ -1,32 +1,34 @@
 <div class="center">
-            <form action="" method="post">
-                <ul>
-                    <li>
-                    <label for="id_type">* Tipo de documento <select name="id_type" id="id_type">
-                        <option value="foto">Fotografía</option>
-                        <option value="video">Video</option>
-                        <option value="audio">Audio</option>
-                    </select></label>
-                    </li>
-                    <li>
-                        <label for="id_collection">Nombre del expediente<input type="text" id="texto" class="texto"></label>
-                    </li>
-                    <li>
-                        <label for="IdDoc">Código de documento<input type="text" id="IdDoc" class="texto"></label>
-                    </li>
-                    <li>
-                        <label for="title">Nombre del documento<input type="text" id="title" class="texto"></label>
-                    </li>
-                    <li>
-                        <label for="date">Fecha de publicación<input type="date" id="date" class="texto"></label>
-                    </li>
-                    <li>
-                        <label for="place">Lugar de grabación<input type="text" id="place" class="texto"></label>
-                    </li>
-                    <li><label for="id_author">Director<input type="text" id="id_author" class="texto"></label><input type="button" class="plus" value="+">
-                    </li>
-                    <li>
-                        <label for="author_role">Rol<input type="text" id="author_role" class="texto"></label><input type="button" class="plus" value="+">
+<h2>Nuevo registro</h2>
+<form action="" method="post">
+<ul>
+    <li>
+        <label for="id_type">* Tipo de documento <select name="id_type" id="id_type">
+        <option value="foto">Fotografía</option>
+        <option value="video">Video</option>
+        <option value="audio">Audio</option>
+        </select></label>
+    </li>
+    <li>
+        <label for="id_collection">Nombre del expediente<input type="text" id="texto" class="texto"></label>
+    </li>
+    <li>
+        <label for="IdDoc">Código de documento<input type="text" id="IdDoc" class="texto"></label>
+    </li>
+    <li>
+        <label for="title">Nombre del documento<input type="text" id="title" class="texto"></label>
+    </li>
+    <li>
+        <label for="date">Fecha de publicación<input type="date" id="date" class="texto"></label>
+    </li>
+    <li>
+        <label for="place">Lugar de grabación<input type="text" id="place" class="texto"></label>
+    </li>
+    <li>
+        <label for="id_author">Director<input type="text" id="id_author" class="texto"></label><input type="button" class="plus" value="+">
+    </li>
+    <li>
+        <label for="author_role">Rol<input type="text" id="author_role" class="texto"></label><input type="button" class="plus" value="+">
                     </li>
                     <li>
                         <label for="contributor">Colaboradores<input type="text" id="contributor" class="texto"></label><input type="button" class="plus" value="+">

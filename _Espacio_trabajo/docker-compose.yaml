@@ -27,7 +27,7 @@ services:
       
       
 ## Para Iniciar los contenedores
-## cd /home/fabian/Descargas/SIGMA/_Espacio_Trabajo/
+## cd /home/fabian/Descargas/SIGMA/_Espacio_trabajo/
 ## docker-compose -p sigma up -d
       
 ## Se debe ingresar al bash de Apache, instalar la extensión mysqli con el comando

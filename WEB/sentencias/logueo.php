@@ -6,4 +6,5 @@ if($conexion)
         $valida_par = mysqli_num_rows($consulta);
         $trae_par = mysqli_fetch_array($consulta);
         }
+mysqli_close($conexion);
 ?>

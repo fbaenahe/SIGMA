@@ -50,7 +50,7 @@ if ($_SESSION['habilitado'] == 0){
   </ul>
   <li>Usuarios</li>
   <ul>
-    <li><a href="?frm=usrs">Ingresar</a></li>
+    <li><a href="?frm=usrs">Usuarios</a></li>
   </ul>
   <li><a href="bye.php">bye</a></li>
 </ul>
@@ -64,10 +64,12 @@ if ($_SESSION['habilitado'] == 0){
 if(isset($_GET['frm'])){
   if($_GET['frm']=="new"){
     include 'modulos/registros/ingreso.php';
+    # include 'modulos/registros/ingreso22.php';
   }elseif ($_GET['frm']=="edt") {
     include 'modulos/registros/editar.php';
   }elseif ($_GET['frm']=="drp") {
-    include 'modulos/registros/eliminar.php';
+    // include 'modulos/registros/eliminar.php';
+    include 'modulos/registros/editar.php';
   }elseif ($_GET['frm']=="usrs") {
     include 'modulos/usuarios/usuarios.php';
   }

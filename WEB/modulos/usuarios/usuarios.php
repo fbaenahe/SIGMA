@@ -1,32 +1,22 @@
+<?php
+if (isset($_POST['edUsuariounic'])) {
+    // echo('Viene con datos');
+    
+    require 'sentencias/conexion.php';
+    require 'sentencias/usuarios/usuarioscrea.php';
+}
+?>
+
 <div class="center">
     <h2>Usuarios</h2>
     <hr>
-    <table>
-        <tr>
-            <th>Documento</th>
-            <th>Nombre</th>
-            <th>Apellido</th>
-            <th>Usuario</th>
-            <th>Correo</th>
-            <th>Habilitado</th>
-            <th>Perfil</th>
-        </tr>
-        <tr>
-        <form action="" method="post">
-            <td><input type="text" id="documento" name="documento" class="dtexto" required></td>
-            <td><input type="text" id="nombre" name="nombre" class="dtexto" required></td>
-            <td><input type="text" id="apellido" name="apellido" class="dtexto"></td>
-            <td><input type="text" id="usuario" name="usuario" class="dtexto" required></td>
-            <td><input type="text" id="mail" name="mail" class="dtexto"required></td>
-            <td><input type="checkbox" id="habilitado" name="habilitado" class="dtexto"></td>
-            <td><input type="checkbox" id="perfil" name="perfil" class="dtexto"></td>
-        </tr>
-        <tr>
-            <th colspan="7"><input type="submit" value="Agregar - Editar" class="dsend"></th>
-        </form>
-        </tr>
-    </table>
+
+    <?php
+    require 'usuariosedita.php';
+    ?>
+
     <hr>
+    
     <table>
         <tr>
             <th>Documento</th>
@@ -36,17 +26,38 @@
             <th>Correo</th>
             <th>Habilitado</th>
             <th>Perfil</th>
-            <th></th>
+            <th>Acción</th>
         </tr>
-        <tr>
-            <td>Documento</td>
-            <td>Nombre</td>
-            <td>Apellido</td>
-            <td>Usuario</td>
-            <td>Correo</td>
-            <td>Habilitado</td>
-            <td>Perfil</td>
-            <td><form action="" method="post"><input type="submit" value="Editar" class="send"></form></td>
-        </tr>
+
+        <?php
+            # Ejecuto sentencias
+            require 'sentencias/conexion.php';
+            require 'sentencias/usuarios/usuariosbuscatodos.php';
+            if($valida_consulta>0){
+                while ($fila = mysqli_fetch_assoc($resultado_paginado)) {
+                    $documento = $fila['documento'];
+                    echo ('<tr> <form action="" method="post">
+                        <td>' . $documento . '<input type="hidden" name="documento" value='.$documento.'></td>
+                        <td>' . $fila['nombre'] . '</td>
+                        <td>' . $fila['apellido'] . '</td>
+                        <td>' . $fila['usuario'] . '</td>
+                        <td>' . $fila['mail'] . '</td>
+                        <td>' . $fila['habilitado'] . '</td>
+                        <td>' . $fila['perfil'] . '</td>
+                        <td> <input type="submit" value="Editar" name="edUsuario" class="send"></form> </td>
+                    </tr>');
+                }
+            }
+    ?>
     </table>
+
+<?php
+echo("Páginas: ");
+// Mostrar enlaces de paginación
+for ($i = 1; $i <= $total_paginas; $i++) {
+    echo ("<a href='?frm=usrs&pagina=$i'>$i</a> ");
+}
+
+?>
+
 </div>

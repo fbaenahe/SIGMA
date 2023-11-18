@@ -52,7 +52,7 @@ services:
 
 ## salir del editor y del bash
 ## Reiniciar el servicio: (Corresponde al nombre del servicio php)
-## docker restart sigma_sitio_1 
+## docker restart sigma_sitio_1
 
 
 

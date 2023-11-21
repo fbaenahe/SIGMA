@@ -18,6 +18,27 @@
             echo('<input type="hidden" name="id" value="'.$id.'">');
         }
     ?>
+
+    <li>
+        <label for="tipodocumento">Tipo del documento
+        <select name="tipodocumento" id="tipodocumento" class="texto">
+        <?php
+        
+        ?>
+        <?php
+        // Valida si es una consulta para llenar dato
+        if (isset($td)) {
+            echo('<option value="'.$td.'">'.$td.'</option>');
+            require 'tipodocumentos/tipodocumentos.php';
+        }else{
+            require 'tipodocumentos/tipodocumentos.php';
+        }
+        ?>
+        </select>
+        </label>
+    </li>
+
+
     <li>
         <label for="title">Nombre del documento<input type="text" id="title" name="title" class="texto" 
         <?php
@@ -28,7 +49,7 @@
         ?>
         ></label>
     </li>
-    
+
     <li>
         <label for="date">Fecha de publicación<input type="date" id="date" name="date" class="texto"
         <?php
@@ -56,5 +77,7 @@
     }
     ?>
     class="send">
+
+    <input type="reset" value="Limpiar">
 </ul>
 </form>

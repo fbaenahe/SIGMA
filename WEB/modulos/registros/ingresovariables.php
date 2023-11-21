@@ -1,4 +1,10 @@
 <?php
+if($_POST['tipodocumento']){
+    $tipodocumento = $_POST['tipodocumento'];
+}else{
+    $tipodocumento = "";
+}
+
 if($_POST['title']){
     $titulo = $_POST['title'];
 }else{

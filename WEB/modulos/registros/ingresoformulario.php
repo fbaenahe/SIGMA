@@ -42,10 +42,10 @@
     <li>
         <label for="title">Nombre del documento<input type="text" id="title" name="title" class="texto" 
         <?php
-        // Valida si es una consulta para llenar dato
-        if (isset($tt)) {
-            echo("value=$tt");
-        }
+            echo("value='".$tt."'");
+        // if (isset($tt)) {
+        //     echo("value=$tt");
+        // }
         ?>
         ></label>
     </li>

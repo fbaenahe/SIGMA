@@ -3,6 +3,8 @@ services:
 
   based:
     image: mysql:8
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
     ports:
       - 3306:3306
     volumes:
@@ -15,46 +17,26 @@ services:
     environment:
       PMA_HOST: based
     ports:
-      - 888:80
+      - 7000:80
 
   sitio:
-    image: php:8.1.5-apache
- #   image: php:5.7
+    build: . 
     ports:
-      - 884:80
+      - 7001:80
     volumes:
       - /home/fabian/Descargas/SIGMA/WEB/:/var/www/html
       
       
+
+
+
+#docker-compose -p sgm up --build
+
 ## Para Iniciar los contenedores
 ## cd /home/fabian/Descargas/SIGMA/_Espacio_trabajo/
-## docker-compose -p sigma up -d
+## docker-compose -p sgm up -d
       
-## Se debe ingresar al bash de Apache, instalar la extensión mysqli con el comando
-## docker exec -it sigma_sitio_1 bash
-## docker-php-ext-install mysqli
-
-## Luego copiar la ruta similar a esta:  /usr/local/lib/php/extensions/no-debug-non-zts-20210902/
-## Ya que en esta carpeta se encuentra ubicado el archivo mysqli.so
-## actualizar e instalar nano con: 
-## apt-get update && apt-get install nano
-
-## Luego, en la ruta: 
-# cd /usr/local/etc/php 
-
-## editar los archivos:
-## En el área Dynamic Extensions pegar la ruta descomentada asignanda a la variable    extension=   y agregar el archivo   mysqli.so 
-## nano php.ini-development
-## extension=/usr/local/lib/php/extensions/no-debug-non-zts-20210902/mysqli.so
-
-## nano php.ini-production
-## extension=/usr/local/lib/php/extensions/no-debug-non-zts-20210902/mysqli.so
-
-## salir del editor y del bash
-## Reiniciar el servicio: (Corresponde al nombre del servicio php)
-## docker restart sigma_sitio_1
-
-
+## docker exec -it sgm_sitio_1 bash
 
 ## Parar el servicio: 
-## docker-compose -p sigma down
+## docker-compose -p sgm down

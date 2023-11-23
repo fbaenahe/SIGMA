@@ -19,7 +19,9 @@ if(isset($_GET['col'])){
 #  if($_GET['col']=="img"){
     include 'modulos/consulta/colecciones.php';
 #  }
-}else{
+} elseif (isset($_GET['item'])){
+    include 'modulos/consulta/item.php';
+} else {
     include 'modulos/consulta/centro.php';
 }
 ?>

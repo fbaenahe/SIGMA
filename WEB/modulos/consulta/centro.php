@@ -16,15 +16,14 @@
         <td><a href="?col=vid"><img src="https://images.ctfassets.net/00i767ygo3tc/18ViOpst6sfsZKmWIMbFr1/8f3b20a1746d686f59e170b6d9383f77/how-to-make-a-video-go-viral.png?w=900&fm=webp" alt="" width="250px"></a></td>
         <td><a href="?col=snd"><img src="https://img.freepik.com/vector-premium/ecualizador-audio-estilo-linea-efecto-tono-musica_533410-1814.jpg?w=1800" alt="" width="250px"></a></td>
     </tr>
+
+    <?php
+    require 'sentencias/conexion.php';
+    require 'sentencias/catalogo/consultacatalogo.php';
+    ?>
+
     <tr>
-        <td>[
-            <?php
-            require 'sentencias/conexion.php';
-            require 'sentencias/catalogo/consultacatalogo.php';
-            
-            echo($imagen);
-            ?>
-            ]</td>
+        <td>[<?php echo($imagen); ?>]</td>
         <td>[<?php echo($video); ?>]</td>
         <td>[<?php echo($audio); ?>]</td>
     </tr>

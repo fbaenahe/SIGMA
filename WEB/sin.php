@@ -6,14 +6,23 @@
       include 'modulos/encabezado.php';
     ?>
 </div> 
-<div class="locations">
+<!-- <div class="locations">
    <?php
-      include 'modulos/locations.php';
+      // include 'modulos/locations.php';
    ?>
-</div>
+</div> -->
 <div>
   <?php
-    include 'modulos/consulta/centro.php';
+    // include 'modulos/consulta/centro.php';
+    if(isset($_GET['col'])){
+      #  if($_GET['col']=="img"){
+          include 'modulos/consulta/colecciones.php';
+      #  }
+      } elseif (isset($_GET['item'])){
+          include 'modulos/consulta/item.php';
+      } else {
+          include 'modulos/consulta/centro.php';
+      }
   ?>
 </div>
   <?php

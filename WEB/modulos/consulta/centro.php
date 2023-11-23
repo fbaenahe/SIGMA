@@ -1,13 +1,13 @@
 <br><br>
 <table class="tabla">
-    <tr>
+    <!-- <tr>
         <td colspan="3">
             <form action="" method="post">
                 <input type="text" name="buscador" id="buscador" placeholder="Busque por palabra clave">
                 <input type="submit" value="Buscar">
             </form>
         </td>
-    </tr>
+    </tr> -->
     <tr>
         <td><br></td>
     </tr>

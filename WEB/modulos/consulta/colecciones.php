@@ -27,9 +27,9 @@
 
     <table>
         <tr>
-            <th>Nro</th>
+            <th></th>
             <!-- <th>Id</th> -->
-            <th>Previsualización</th>
+            <th>Documento</th>
             <th>Detalles</th>
         </tr>
         
@@ -42,11 +42,23 @@
             while ($trae_datos = mysqli_fetch_array($consulta)) {
                 $registro = $trae_datos["id"];
                 $titulo = $trae_datos["title"];
+                $icono = $trae_datos['files_path'];
             echo('
                 <tr>
                 <td rowspan="2">'.$i.'</td>'.
                 // <td rowspan="2"><a href="?item='.$registro.'">'.$registro.'</a></td>
-                '<td rowspan="2"><a href="?item='.$registro.'">thumb</a></td>
+                '<td rowspan="2"><a href="?item='.$registro.'">');
+                if(empty($icono)){
+                    echo('<img src="img/missing_icon.png" alt="thumb" width="80px"></a>');
+                } elseif($coleccion == "Imagen") {
+                    echo('<img src="' . $icono . '" alt="thumb" width="80px"></a>');
+                } elseif($coleccion == "Audio") {
+                    echo('<img src="img/Audio.png" alt="icono" width="80px"></a>');
+                } elseif($coleccion == "Video") {
+                    echo('<img src="img/Video.png" alt="icono" width="80px"></a>');
+                } 
+            echo('
+                </td>
                 <td>Título: <a href="?item='.$registro.'">'.$titulo.'</a></td>
                 </tr><tr>
                 <td>Fecha: '.$trae_datos["date"].'</td>

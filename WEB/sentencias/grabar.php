@@ -1,6 +1,6 @@
 <?php
 if($conexion){
-    $sentencia = "INSERT INTO `registrostemp` (`id`, `tipodocumento`, `title`, `date`) VALUES (NULL,'$tipodocumento','$titulo','$fecha');";
+    $sentencia = "INSERT INTO `registrostemp` (`id`, `tipodocumento`, `title`, `date`, `files_path`) VALUES (NULL,'$tipodocumento','$titulo','$fecha','$archivo_ruta');";
     $consulta = mysqli_query($conexion, $sentencia);
 
     if ($consulta) {

@@ -20,12 +20,12 @@ include 'modulos/cabezote.php';
     include 'modulos/encabezado.php';
     ?>
 </div>
-<div class="locations">
+<!-- <div class="locations">
 <?php
-  $onfire=1;
-  include 'modulos/locations.php';
+  // $onfire=1;
+  // include 'modulos/locations.php';
 ?>
-</div>
+</div> -->
 <div>
 <?php
 # Saludo
@@ -52,7 +52,7 @@ if ($_SESSION['habilitado'] == 0){
   <ul>
     <li><a href="?frm=usrs">Usuarios</a></li>
   </ul>
-  <li><a href="bye.php">bye</a></li>
+  <li><a href="bye.php">Logout</a></li>
 </ul>
 <?php
 }
@@ -74,6 +74,20 @@ if(isset($_GET['frm'])){
     include 'modulos/usuarios/usuarios.php';
   }
 }
+// else{
+//   include 'modulos/consulta/centro.php';
+// }
+
+if(isset($_GET['col'])){
+  #  if($_GET['col']=="img"){
+      include 'modulos/consulta/colecciones.php';
+  #  }
+  } elseif (isset($_GET['item'])){
+      include 'modulos/consulta/item.php';
+  } else {
+      include 'modulos/consulta/centro.php';
+  }
+
 ?>
 </div>
 

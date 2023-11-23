@@ -10,7 +10,7 @@
         echo('<h2>Nuevo registro</h2>');
     }
 ?>
-<form action="" method="post">
+<form action="" method="post" enctype="multipart/form-data">
 <ul>
     <!-- Si viene con dato de id para editar -->
     <?php
@@ -60,6 +60,15 @@
         ?>
         ></label>
     </li>
+
+
+    <?php
+    if ($_GET['frm']=="new") {
+        echo('<li> <label for="archivo"> Ítem <input type="file" name="archivo" id="archivo" required> </label> </li>');
+    }
+    ?>
+
+
     <?php
     if ($_GET['frm']=="drp") {
         echo('<li> <input type="text" name="confirmar" id="confirmar" placeholder="Escriba: confirmo" required> </li>');

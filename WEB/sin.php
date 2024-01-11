@@ -11,7 +11,7 @@
       // include 'modulos/locations.php';
    ?>
 </div> -->
-<div>
+<div class="unique">
   <?php
     // include 'modulos/consulta/centro.php';
     if(isset($_GET['col'])){

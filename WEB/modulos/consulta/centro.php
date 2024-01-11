@@ -1,16 +1,13 @@
-<br><br>
-<table class="tabla">
-    <!-- <tr>
+<table class="indice_documentos">
+    <tr>
         <td colspan="3">
             <form action="" method="post">
                 <input type="text" name="buscador" id="buscador" placeholder="Busque por palabra clave">
                 <input type="submit" value="Buscar">
             </form>
         </td>
-    </tr> -->
-    <tr>
-        <td><br></td>
     </tr>
+    <tr><td><br></td></tr>
     <tr>
         <td><a href="?col=img"><img src="https://st3.depositphotos.com/1017819/15265/i/450/depositphotos_152650618-stock-photo-masai-mara-sunset.jpg" alt="" width="250px"></a></td>
         <td><a href="?col=vid"><img src="https://images.ctfassets.net/00i767ygo3tc/18ViOpst6sfsZKmWIMbFr1/8f3b20a1746d686f59e170b6d9383f77/how-to-make-a-video-go-viral.png?w=900&fm=webp" alt="" width="250px"></a></td>

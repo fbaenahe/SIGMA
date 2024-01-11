@@ -1,128 +1,81 @@
-.sitio{
-    width: 1200px;
-    margin: auto;
+body {
+    margin: 0; /* Elimina los márgenes predeterminados del cuerpo */
+    padding: 0; /* Elimina los rellenos predeterminados del cuerpo */
 }
 
-.text_encab{
+.sitio {
+    width: 1200px;
+    margin: 0 auto; /* Centra el contenedor principal */
+    display: flex;
+}
+
+.encabezado {
+    width: 100%; /* Ancho centrado del encabezado */
+    position: fixed; /* Fija el encabezado en la parte superior */
+    z-index: 1; /* Asegura que el encabezado esté sobre los demás elementos */
+}
+
+.side {
+    width: 200px; /* Ancho del lado */
+    position: fixed; /* Fija el lado en la parte izquierda */
+    margin-top: 200px; /* Ajusta el margen superior para colocar debajo del encabezado */
+}
+
+.medio {
+    flex: 1; /* Toma el espacio restante disponible */
+    margin-top: 200px; /* Ajusta el margen superior para colocar debajo del encabezado */
+    margin-left: 200px; /* Ajusta el margen izquierdo para alinearse con el lado */
+    padding: 20px; /* Ajusta el relleno si es necesario */
+    /* text-align: center; */
+    /* background-color: brown; */
+}
+
+.unique {
+    flex: 1; /* Toma el espacio restante disponible */
+    margin-top: 200px; /* Ajusta el margen superior para colocar debajo del encabezado */
+    /* margin-left: 200px; */
+    padding: 20px; /* Ajusta el relleno si es necesario */
+    /* text-align: center; */
+    /* background-color: brown; */
+}
+
+.indice_documentos {
+    margin: 0 auto; /* Centra la tabla horizontalmente */
     text-align: center;
 }
 
-.encabezado{
-    text-align: center;
-    margin: auto;
-}
-.locations{
-    width: 1200px;
-    height: 30px;
-    margin: auto;
-    background-color:rgb(35, 56, 35);
-    color: white;
-    text-align: right;
+.indice_documentos tr  td{
+    padding-right: 15px;
 }
 
-.locations a{
-        outline: none;
-        text-decoration: none;
-        padding: 2px 1px 0;
-    }
-
-.locations a:link {
-  color: rgb(225, 214, 214);
-}
-
-.locations a:visited {
-    color: rgb(225, 214, 214);
-  }
-    
-.locations a:hover {
-    color: rgb(201, 197, 197);
-  }
-  
-
-.location{
-    width: 100%;
-    height: 30px;
-    background-color: darkgreen;
-    color: white;
+.side ul {
+    list-style: none; /* Elimina los estilos de lista predeterminados */
     padding: 0;
     margin: 0;
-    display: inline;
 }
 
-.location p{
-    padding-right: 10px;
-    margin: 0;
-    float: right;
+.side ul li {
+    /* background-color: #3498db; Color de fondo del elemento del menú */
+    padding-bottom: 5px;
+    margin-bottom: 1px; /* Espaciado entre elementos del menú */
+    text-align: left;
 }
 
-
-.side{
-    float: left;
-    width: 200px;
+.side ul li a {
+    text-decoration: none; /* Elimina el subrayado predeterminado de los enlaces */
+    color: #000000;
+    display: block; /* Hace que todo el área del li sea cliclable */
+    padding-left: 10px;
 }
 
-
-.completa{
-    width: 100%;
-}
-
-#buscador{
-    width: 500px;
+.side ul li a:hover {
+    background-color: #265e33; /* Cambia el color de fondo al pasar el ratón por encima */
+    color: #b4d6af;
+    font-weight: bold;
     border-radius: 5px;
 }
 
-.tabla{
-    width: 100%;
-    text-align: center;
-}
-
-ul{
-    list-style: none;
-}
-
-.center{
-    width: 1000px;
-    float: right;
-}
-
-
-.centro{
-    margin: auto;
-    margin-top: 20px;
-    text-align: center;
-    width: 580px;
-    border: 1px solid;
-    padding-bottom: 20px;
-}
-
-
-.texto{
-    width: 200px;
-    border-radius: 5px;
-    margin: 3px;
-}
-
-
-.cancel{
-    background-color: lightcoral;
-    width: 80px;
-    border-radius: 5px;
-}
-
-.cancel:hover{
-    background-color:brown;
-}
-
-.send{
-    width: 80px;
-    border-radius: 5px;
-}
-
-.send:hover{
-    background-color: aquamarine;
-}
-
-.logueo{
-    text-align: center;
-    margin: auto;
+.no_access{
+    background-color: #a2adad;
+    color: #362108;
 }

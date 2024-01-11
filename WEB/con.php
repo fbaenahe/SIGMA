@@ -26,32 +26,34 @@ include 'modulos/cabezote.php';
   // include 'modulos/locations.php';
 ?>
 </div> -->
-<div>
+<div class="side">
 <?php
 # Saludo
 echo("<p>Hola, <b>".$_SESSION['nombre']."</b></p>");
 # Pregunte si es un usuario habilitado (y activo)
 if ($_SESSION['habilitado'] == 0){
 # Usuario sin permisos - No habilitado
-  echo("Usted no tiene permisos suficientes<br>");
-  echo("Comuníquese con el administrador");
+  echo("<p class='no_access'>Usted no cuenta con permisos suficientes para trabajar en este módulo.<br>");
+  echo("Comuníquese con el administrador</p>");
   session_destroy();
-  echo("<br>");
-  echo('<a href="bye.php">bye</a>');
+  echo("<ul><li>");
+  echo('<a href="bye.php">Salir</a>');
+  echo("</li></ul>");
 }else{
 # Usuario habilitado
 ?>
 <ul>
-  <li>Registros</li>
+  <li><b>Registros</b></li>
   <ul>
     <li><a href="?frm=new">Ingresar</a></li>
     <li><a href="?frm=edt">Editar</a></li>
     <li><a href="?frm=drp">Eliminar</a></li>
   </ul>
-  <li>Usuarios</li>
+  <li><b>Usuarios</b></li>
   <ul>
     <li><a href="?frm=usrs">Usuarios</a></li>
   </ul>
+  <li><b>Desconetar</b></li>
   <li><a href="bye.php">Logout</a></li>
 </ul>
 <?php
@@ -73,20 +75,17 @@ if(isset($_GET['frm'])){
   }elseif ($_GET['frm']=="usrs") {
     include 'modulos/usuarios/usuarios.php';
   }
-}
-// else{
-//   include 'modulos/consulta/centro.php';
-// }
-
-if(isset($_GET['col'])){
+} elseif(isset($_GET['col'])){
   #  if($_GET['col']=="img"){
       include 'modulos/consulta/colecciones.php';
   #  }
-  } elseif (isset($_GET['item'])){
+} elseif (isset($_GET['item'])){
       include 'modulos/consulta/item.php';
-  } else {
-      include 'modulos/consulta/centro.php';
-  }
+  } 
+  
+else{
+  include 'modulos/consulta/centro.php';
+}
 
 ?>
 </div>

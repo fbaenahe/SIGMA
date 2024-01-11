@@ -1,0 +1,21 @@
+html {
+    height: 100%;
+}
+body {
+    background: rgb(34,193,195);
+    background: linear-gradient(135deg, #1a491a 23%, #d6d6d1 100%);
+}
+
+.logueo{
+    width: 350px;
+    height: 200px;
+    margin: 150px auto;
+    text-align: center;
+    border: #3b3d3b solid 1px;
+    border-radius: 10px;
+    color: #222020;
+}
+
+.msg_error{
+    color: rgb(233, 234, 238);
+}

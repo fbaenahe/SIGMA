@@ -1,4 +1,8 @@
 <div class="center">
+
+<table class="listcolecciones">
+    <tr>
+        <th colspan="4" class="tit_lista">
     
     <?php
 
@@ -19,18 +23,19 @@
             break;
     }
 
-    echo("<h2>Colección << " . $coleccion . " >> </h2>");
+    echo("Listado de " . $coleccion );
 
     require 'sentencias/conexion.php';
     require 'sentencias/catalogo/consultacolecion.php';
     ?>
 
-    <table>
+        </th>
+    </tr>
+
         <tr>
-            <th></th>
-            <!-- <th>Id</th> -->
-            <th>Documento</th>
-            <th>Detalles</th>
+            <th class="table_id">Id</th>
+            <th class="table_doc">Documento</th>
+            <th class="table_det">Detalles</th>
         </tr>
         
         <?php
@@ -70,3 +75,14 @@
         ?>
     </table>
 </div>
+
+<?php
+// require 'sentencias/conexion.php';
+// require 'sentencias/catalogo/consultacoleccionpaginas.php';
+// echo("<br>Páginas: ");
+// // Mostrar enlaces de paginación
+// for ($i = 1; $i <= $total_paginas; $i++) {
+//     echo ("<a href='?col=$colec&pagina=$i'>$i</a> ");
+// }
+
+?>

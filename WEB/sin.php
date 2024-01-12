@@ -13,6 +13,7 @@
 </div> -->
 <div class="unique">
   <?php
+
     // include 'modulos/consulta/centro.php';
     if(isset($_GET['col'])){
       #  if($_GET['col']=="img"){
@@ -20,6 +21,9 @@
       #  }
       } elseif (isset($_GET['item'])){
           include 'modulos/consulta/item.php';
+      } elseif (isset($_POST['buscador'])){
+        $key = $_POST['buscador'];
+        include 'modulos/consulta/query.php';
       } else {
           include 'modulos/consulta/centro.php';
       }

@@ -79,3 +79,116 @@ body {
     background-color: #a2adad;
     color: #362108;
 }
+
+.listcolecciones {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.listcolecciones th, .listcolecciones td {
+    border: 1px solid #ddd;
+    padding: 4px;
+    text-align: left;
+}
+
+.listcolecciones {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.listcolecciones th, .listcolecciones td {
+    border: 1px solid #ddd;
+    padding: 4px;
+    text-align: left;
+}
+
+.listcolecciones th {
+    background-color: #265e33;
+    color: white;
+}
+
+.listcolecciones .tit_lista {
+    text-align: center;
+    color: white;
+    padding: 5px;
+    font-size: 20px;
+}
+
+.listcolecciones .table_id {
+    width: 30px;
+}
+
+.listcolecciones .table_doc {
+    width: 130px;
+}
+
+
+
+
+.item th, .item td {
+    /* border: 1px solid #ddd; */
+    padding: 4px;
+    text-align: left;
+}
+
+.item {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.item th, .item td {
+    /* border: 1px solid #ddd; */
+    padding: 4px;
+    text-align: left;
+}
+
+.item th {
+    background-color: #265e33;
+    color: white;
+    text-align: center;
+}
+.item .archivo {
+    text-align: center;
+}
+
+
+#buscador{
+    width: 500px;
+    border-radius: 5px;
+}
+
+.cancel{
+    background-color: lightcoral;
+    width: 80px;
+    border-radius: 5px;
+}
+
+.cancel:hover{
+    background-color:brown;
+}
+
+.send{
+    width: 80px;
+    border-radius: 5px;
+}
+
+.send:hover{
+    background-color: aquamarine;
+}
+
+.texto{
+    width: 200px;
+    border-radius: 5px;
+    margin: 3px;
+}
+
+.formulario_ingreso{
+    list-style: none; /* Elimina los estilos de lista predeterminados */
+    padding: 0;
+    margin: 0;
+}
+
+.formulario_ingreso td{
+    width: 200px;
+}
+

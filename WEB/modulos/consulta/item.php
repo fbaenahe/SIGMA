@@ -12,12 +12,12 @@
     } else {
         echo(
             '
-            <table>
+            <table class="item">
         <tr>
-            <td>'.$trae_datos["title"].'</td>
+            <th>'.$trae_datos["title"].'</th>
         </tr>
         <tr>
-            <td>');
+            <td class="archivo">');
             
             if ($tipo == "Video"){
                 // type="video/mp4">
@@ -33,8 +33,10 @@
         echo('</td>
         </tr>
         <tr>
-            <td>Detalles
-                <br>
+            <th><b>Detalles</b></th>
+        </tr>
+        <tr>
+            <td>
                 Registro número: '.$trae_datos["id"].'<br>
                 Fecha: '.$trae_datos["date"].'
             </td>

@@ -81,7 +81,9 @@ if(isset($_GET['frm'])){
   #  }
 } elseif (isset($_GET['item'])){
       include 'modulos/consulta/item.php';
-  } 
+  } elseif (isset($_POST['buscador'])){
+    include 'modulos/consulta/query.php';
+  }
   
 else{
   include 'modulos/consulta/centro.php';

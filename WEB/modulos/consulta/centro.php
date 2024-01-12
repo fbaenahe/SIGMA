@@ -1,7 +1,7 @@
 <table class="indice_documentos">
     <tr>
         <td colspan="3">
-            <form action="" method="post">
+            <form action="index.php" method="post">
                 <input type="text" name="buscador" id="buscador" placeholder="Busque por palabra clave">
                 <input type="submit" value="Buscar">
             </form>

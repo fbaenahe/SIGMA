@@ -1,9 +1,9 @@
 <?php
-$qr = $_POST['buscador'];
+$qr = $_GET['buscador'];
 
     require 'sentencias/conexion.php';
-    require 'sentencias/catalogo/queryitems.php';
-
+    // require 'sentencias/catalogo/queryitems.php';
+    require 'sentencias/catalogo/consultaquerypaginas.php';
 
 ?>
 
@@ -13,9 +13,10 @@ $qr = $_POST['buscador'];
 
 <table class="listcolecciones">
     <tr>
-        <th colspan="4" class="listcolecciones"> Consulta </th>
+        <th colspan="5" class="listcolecciones"> Consulta </th>
     </tr>
     <tr>
+        <th class="table_id">#</th>
         <th class="table_id">Id</th>
         <th class="table_id">Tipo</th>
         <th class="table_id">Documento</th>
@@ -25,19 +26,22 @@ $qr = $_POST['buscador'];
         <?php
 
         if ($valida_consulta == 0) {
-            echo("<tr><td colspan='4'>No hay datos para mostrar </td></tr>");
+            echo("<tr><td colspan='5'>No hay datos para mostrar </td></tr>");
         } else {
             $i = 1;
-            while ($trae_datos = mysqli_fetch_array($consulta)) {
+            // while ($trae_datos = mysqli_fetch_array($consulta)) {
+            while ($trae_datos = mysqli_fetch_array($resultado_paginado)) {
                 $registro = $trae_datos["id"];
                 $tipo = $trae_datos["tipodocumento"];
                 $titulo = $trae_datos["title"];
                 $icono = $trae_datos['files_path'];
 
+            $resul = (($pagina_actual * $resultados_por_pagina)-$resultados_por_pagina);
 
             echo('
                 <tr>
-                <td rowspan="2">'.$i.'</td>
+                <td rowspan="2">'.$i + $resul.'</td>
+                <td rowspan="2">'.$registro.'</td>
                 <td rowspan="2">'.$tipo.
                 // <td rowspan="2"><a href="?item='.$registro.'">'.$registro.'</a></td>
                 '<td rowspan="2"><a href="?item='.$registro.'">');
@@ -65,12 +69,12 @@ $qr = $_POST['buscador'];
 </div>
 
 <?php
-// require 'sentencias/conexion.php';
-// require 'sentencias/catalogo/consultacoleccionpaginas.php';
-// echo("<br>Páginas: ");
+require 'sentencias/conexion.php';
+require 'sentencias/catalogo/consultaquerypaginas.php';
+echo("<br>Páginas: ");
 // // Mostrar enlaces de paginación
-// for ($i = 1; $i <= $total_paginas; $i++) {
-//     echo ("<a href='?col=$colec&pagina=$i'>$i</a> ");
-// }
+for ($i = 1; $i <= $total_paginas; $i++) {
+    echo ("<a href='?buscador&pagina=$i'>$i</a> ");
+}
 
 ?>

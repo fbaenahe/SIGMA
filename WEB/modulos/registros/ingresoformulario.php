@@ -10,6 +10,7 @@
         echo('<h2>Nuevo registro</h2>');
     }
 ?>
+<!-- Campos de ingreso de registros -->
 <table class="formulario_ingreso">
     <form action="" method="post" enctype="multipart/form-data">
     <?php
@@ -62,6 +63,126 @@
             >
         </td>
     </tr>
+
+
+
+
+
+
+
+
+    <tr>
+        <td>Lugar</td>
+        <td>
+            <label for="place"><input type="text" id="place" name="place" class="texto"
+            <?php
+            // Valida si es una consulta para llenar dato
+            if (isset($place)) {
+                echo("value=$place");
+            }
+            ?>
+            >
+        </td>
+    </tr>
+
+
+    <tr>
+        <td>Nombre del Autor</td>
+        <td>
+            <label for="author"><input type="text" id="author" name="author" class="texto"
+            <?php
+            // Valida si es una consulta para llenar dato
+            if (isset($author)) {
+                echo("value=$author");
+            }
+            ?>
+            >
+        </td>
+    </tr>
+    <tr>
+        <td>Rol del Autor</td>
+        <td>
+            <label for="author_role"><input type="text" id="author_role" name="author_role" class="texto"
+            <?php
+            // Valida si es una consulta para llenar dato
+            if (isset($author_role)) {
+                echo("value=$author_role");
+            }
+            ?>
+            >
+        </td>
+    </tr>
+    <tr>
+        <td>Palabra clave</td>
+        <td>
+            <label for="id_keywords"><input type="text" id="id_keywords" name="id_keywords" class="texto"
+            <?php
+            // Valida si es una consulta para llenar dato
+            if (isset($id_keywords)) {
+                echo("value=$id_keywords");
+            }
+            ?>
+            >
+        </td>
+    </tr>
+    <tr>
+        <td>Descripción</td>
+        <td>
+            <label for="description"><input type="text" id="description" name="description" class="texto"
+            <?php
+            // Valida si es una consulta para llenar dato
+            if (isset($description)) {
+                echo("value=$description");
+            }
+            ?>
+            >
+        </td>
+    </tr>
+    <tr>
+        <td>Observaciones</td>
+        <td>
+            <label for="description_alternative"><input type="text" id="description_alternative" name="description_alternative" class="texto"
+            <?php
+            // Valida si es una consulta para llenar dato
+            if (isset($description_alternative)) {
+                echo("value=$description_alternative");
+            }
+            ?>
+            >
+        </td>
+    </tr>
+    <tr>
+        <td>Documentalista</td>
+        <td>
+            <label for="documentalista"><input type="text" id="documentalista" name="documentalista" class="texto"
+            <?php
+            // Valida si es una consulta para llenar dato
+            if (isset($documentalista)) {
+                echo("value=$documentalista");
+            }
+            ?>
+            >
+        </td>
+    </tr>
+    <tr>
+        <td>Fecha documentación</td>
+        <td>
+            <label for="date_documentalista"><input type="date" id="date_documentalista" name="date_documentalista" class="texto"
+            <?php
+            // Valida si es una consulta para llenar dato
+            if (isset($date_documentalista)) {
+                echo("value=$date_documentalista");
+            }
+            ?>
+            >
+        </td>
+    </tr>
+
+
+
+
+
+
 
 
     <?php

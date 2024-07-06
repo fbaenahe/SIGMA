@@ -26,15 +26,17 @@
     echo("Listado de " . $coleccion );
 
     require 'sentencias/conexion.php';
-    require 'sentencias/catalogo/consultacolecion.php';
+    // require 'sentencias/catalogo/consultacolecion.php';
+    require 'sentencias/catalogo/consultacoleccionpaginas.php';
     ?>
 
         </th>
     </tr>
 
         <tr>
-            <th class="table_id">Id</th>
-            <th class="table_doc">Documento</th>
+            <th class="table_id" style="width:5%">#</th>
+            <th class="table_id" style="width:5%">Id</th>
+            <th class="table_doc" style="width:20%">Documento</th>
             <th class="table_det">Detalles</th>
         </tr>
         
@@ -44,13 +46,18 @@
             echo("<tr><td colspan='4'>No hay datos para mostrar </td></tr>");
         } else {
             $i = 1;
-            while ($trae_datos = mysqli_fetch_array($consulta)) {
+            while ($trae_datos = mysqli_fetch_array($resultado_paginado)) {
+            // while ($trae_datos = mysqli_fetch_array($consulta)) {
                 $registro = $trae_datos["id"];
                 $titulo = $trae_datos["title"];
                 $icono = $trae_datos['files_path'];
+
+            $resul = (($pagina_actual * $resultados_por_pagina)-$resultados_por_pagina);
+
             echo('
                 <tr>
-                <td rowspan="2">'.$i.'</td>'.
+                <td rowspan="2">'.$i + $resul.'</td>
+                <td rowspan="2">'.$registro.'</td>'.
                 // <td rowspan="2"><a href="?item='.$registro.'">'.$registro.'</a></td>
                 '<td rowspan="2"><a href="?item='.$registro.'">');
                 if(empty($icono)){
@@ -77,12 +84,11 @@
 </div>
 
 <?php
-// require 'sentencias/conexion.php';
-// require 'sentencias/catalogo/consultacoleccionpaginas.php';
-// echo("<br>Páginas: ");
-// // Mostrar enlaces de paginación
-// for ($i = 1; $i <= $total_paginas; $i++) {
-//     echo ("<a href='?col=$colec&pagina=$i'>$i</a> ");
-// }
-
+require 'sentencias/conexion.php';
+require 'sentencias/catalogo/consultacoleccionpaginas.php';
+echo("<br>Páginas: ");
+// Mostrar enlaces de paginación
+for ($i = 1; $i <= $total_paginas; $i++) {
+    echo ("<a href='?col=$colec&pagina=$i'>$i</a> ");
+}
 ?>

@@ -96,7 +96,7 @@ body {
     width: 100%;
 }
 
-.listcolecciones th, .listcolecciones td {
+.listcolecciones th, .listcolecciones td{
     border: 1px solid #ddd;
     padding: 4px;
     text-align: left;

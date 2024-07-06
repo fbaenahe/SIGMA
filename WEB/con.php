@@ -81,9 +81,10 @@ if(isset($_GET['frm'])){
   #  }
 } elseif (isset($_GET['item'])){
       include 'modulos/consulta/item.php';
-  } elseif (isset($_POST['buscador'])){
+} elseif (isset($_GET['buscador'])){
+  // Se modificó el método GET a POST 
     include 'modulos/consulta/query.php';
-  }
+}
   
 else{
   include 'modulos/consulta/centro.php';

@@ -14,10 +14,10 @@
             '
             <table class="item">
         <tr>
-            <th>'.$trae_datos["title"].'</th>
+            <th colspan=3>'.$trae_datos["title"].'</th>
         </tr>
         <tr>
-            <td class="archivo">');
+            <td class="archivo"  colspan=3>');
             
             if ($tipo == "Video"){
                 // type="video/mp4">
@@ -31,15 +31,42 @@
                 echo('<img src="' . $archivo . '" alt="Archivo" width="500px">');
             }
         echo('</td>
+        <tr>
+            <th colspan=3><b>Detalles</b></th>
         </tr>
         <tr>
-            <th><b>Detalles</b></th>
+            <td>Descripción:</td>
+            <td colspan=2>'.$trae_datos["description"].'</td>
+        </tr>
+        <tr>
+            <th style="width:34%">
+                Descriptivos
+            </th>
+            <th style="width:33%">
+                Estructura
+            </th>
+            <th style="width:33%">
+                Administrativo
+            </th>
         </tr>
         <tr>
             <td>
-                Registro número: '.$trae_datos["id"].'<br>
-                Fecha: '.$trae_datos["date"].'
+                Autor: '.$trae_datos["author"].'<br>
+                Rol: '.$trae_datos["author_role"].'<br>
+                Palabras clave: '.$trae_datos["id_keywords"].'<br>
+                Fecha de publicación: '.$trae_datos["date"].'<br>
             </td>
+            <td>
+                Registro número: '.$trae_datos["id"].'<br>
+            </td>
+            <td>
+                Documentalista: '.$trae_datos["documentalista"].'<br>
+                Fecha de documentación: '.$trae_datos["date_documentalista"].'<br>
+            </td>
+        </tr>
+        <tr>
+            <td>Observaciones:</td>
+            <td colspan=2>'.$trae_datos["description_alternative"].'</td>
         </tr>
     </table>
             '

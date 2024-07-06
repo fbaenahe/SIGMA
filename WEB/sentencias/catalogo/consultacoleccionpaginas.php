@@ -19,7 +19,7 @@ if($conexion){
     $inicio = ($pagina_actual - 1) * $resultados_por_pagina;
 
     // Consulta para obtener los registros de la página actual
-    $sql_paginado = "SELECT * FROM registrostemp LIMIT $inicio, $resultados_por_pagina";
+    $sql_paginado = "SELECT * FROM registrostemp WHERE tipodocumento='$coleccion' LIMIT $inicio, $resultados_por_pagina";
     $resultado_paginado = mysqli_query($conexion, $sql_paginado);
 
 }
